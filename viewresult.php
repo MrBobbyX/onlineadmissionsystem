@@ -10,6 +10,11 @@ $stmrk= $n['s_mark'];
 
 $id=$_SESSION['user'];
 
+if (!isset($_SESSION['id']))///Ahmad
+{
+    header("location:logout.php");
+}///Ahmad
+
 ?>
 <html>
     <head>
