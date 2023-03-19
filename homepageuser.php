@@ -322,6 +322,12 @@ include 'usersession.php';
             </div>
         <?php
               }
+
+if (!isset($_SESSION['s_id']))//Ahmad
+{
+    header("location:logout.php"); //this is the update to prevent redirection
+}//Ahmad
+
         ?>
              
                          
