@@ -18,12 +18,26 @@ if(isset($_REQUEST["u_sub"]))
  $id=$_POST['u_id'];
  $pwd=$_POST['u_ps'];
 
-
+ if (isset($_SESSION['id']))///////The entire IF statement is the change --> Ahmad
+{
+    header("location:admin.php");  
+    header("location:adlogout.php");
+    header("location:adminac.php");
+    header("location:adminlogin.php");
+    header("location:viewdoc.php");
+    header("location:viewform.php");
+    header("location:viewresult.php");
+    header("location:homepageuser.php");
+}/////////End of IF statement
+    //$id and $pwd passed into new variable &username and &password
+   $username = mysqli_real_escape_string($con, $id); ////changes --> Ahmad
+   $password = mysqli_real_escape_string($con, $pwd);////changes ---> Ahmad
+   
    $res = mysqli_query($con, "SELECT * FROM t_user_data WHERE s_id = '$id'");
    $res1=mysqli_query($con ,"select * from t_user where s_id='".$id."'");
 
     if(mysqli_num_rows($res)>0){
-
+    
 
         $row = mysqli_fetch_assoc($res);
 
