@@ -7,7 +7,10 @@ if(!isset($con))
     die("Database Not Found");
 }
 
-
+if (!isset($_SESSION['id']))//Ahmad
+{
+    header("location:logout.php");
+}//Ahmad
 
 $q=mysqli_query($con,"select s_name from t_user_data where s_id='$getid'");
 $n=  mysqli_fetch_assoc($q);
