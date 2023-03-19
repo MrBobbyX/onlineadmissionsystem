@@ -4,7 +4,12 @@ error_reporting(0);
 session_start();
 
 $con=mysqli_connect("localhost","root","","oas");
- 
+
+if (!isset($_SESSION['id'])) //Ahmad
+{
+    header("location:logout.php");
+}//Ahmad
+
 if($_REQUEST["srchk"]!="")
 {
     $id = $_REQUEST["srchk"];
