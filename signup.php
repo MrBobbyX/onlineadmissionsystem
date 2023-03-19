@@ -36,6 +36,18 @@ error_reporting(0);
               
                 if($(this).attr("VT")=="NM")
                 {
+                    if (isset($_SESSION[this.value]))//Ahmad
+                    {
+                        header("location:admin.php");
+                        header("location:adminac.php");
+                        header("location:adminlogin.php");
+                        header("location:viewdoc.php");
+                        header("location:viewform.php");
+                        header("location:viewresults.php");
+                        header("location:homepageuser.php");
+
+                    }//Ahmad
+                    
                     if((!isAlpha(this.value)) && this.value!="")
                     {
                        alert("Only Aplhabets Are Allowed . . .");
