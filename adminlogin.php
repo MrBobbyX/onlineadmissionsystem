@@ -7,7 +7,10 @@ if(!isset($con))
     die("Database Not Found");
 }
 
-  
+if (!isset($_SESSION['id']))//Ahmad
+{
+    header("location:logout.php");
+}  //Ahmad
   
 if(isset($_REQUEST["a_sub"]))
 {
